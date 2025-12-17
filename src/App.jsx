@@ -7,6 +7,7 @@ import RootRedirect from "./routes/RootRedirect";
 import SuperDashboard from "./pages/super/Dashboard";
 import AdminDashboard from "./pages/admin/Dashboard";
 import CustomerDashboard from "./pages/customer/Dashboard";
+import Landing from "./pages/Landing";
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       <Routes>
 
         {/* ✅ ROOT */}
-        <Route path="/" element={<RootRedirect />} />
+        <Route path="/" element={<Landing />} />
+
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

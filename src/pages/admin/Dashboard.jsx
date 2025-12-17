@@ -1,1 +1,9 @@
-export default () => <h1 className="p-10 text-2xl">Admin Panel</h1>;
+import DashboardLayout from "../../layouts/DashboardLayout";
+
+export default () => (
+  <DashboardLayout title="Admin Panel">
+    <p className="text-lg">
+      Kelola menu, stok, dan transaksi.
+    </p>
+  </DashboardLayout>
+);

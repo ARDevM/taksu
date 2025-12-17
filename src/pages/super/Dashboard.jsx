@@ -1,8 +1,11 @@
+import DashboardLayout from "../../layouts/DashboardLayout";
+
 export default function SuperDashboard() {
-    return (
-      <div className="min-h-screen bg-black text-red-500 text-4xl p-10">
-        SUPER ADMIN PANEL
-      </div>
-    );
-  }
-  
+  return (
+    <DashboardLayout title="Super Admin Panel">
+      <p className="text-lg">
+        Kelola sistem, admin, dan laporan cafe.
+      </p>
+    </DashboardLayout>
+  );
+}

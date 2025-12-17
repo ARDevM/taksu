@@ -1,1 +1,9 @@
-export default () => <h1 className="p-10 text-2xl">Customer Panel</h1>;
+import DashboardLayout from "../../layouts/DashboardLayout";
+
+export default () => (
+  <DashboardLayout title="Customer Area">
+    <p className="text-lg">
+      Selamat datang, nikmati menu dan event cafe.
+    </p>
+  </DashboardLayout>
+);
