@@ -16,57 +16,7 @@ export default function Landing() {
   const [showLogin, setShowLogin] = useState(false);
   return (
     <div className="min-h-screen bg-[#f8f7f3] text-[#1f3d2b] font-serif">
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-14 text-center">
 
-        {/* BRAND ICON */}
-        <div className="flex justify-center mb-8">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-[#1f3d2b]"
-          >
-            <path
-              d="M20 44C20 49 25 54 32 54C39 54 44 49 44 44V22H20V44Z"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <path
-              d="M20 22C20 16 44 16 44 22"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <path
-              d="M46 26C51 26 54 30 54 34C54 38 51 42 46 42"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <path
-              d="M26 14C26 10 24 8 22 6"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <path
-              d="M32 14C32 10 30 8 28 6"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
-
-        {/* BRAND NAME */}
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-[0.12em]">
-          TAKSU BOOK CAFE
-        </h1>
-
-        {/* TAGLINE */}
-        <p className="mt-5 text-sm md:text-base tracking-[0.35em] uppercase text-[#1f3d2b]/70">
-          Book Cafe & Independent Library
-        </p>
-
-      </section>
       <Navbar />
       {!user && (
           <div className="mt-10 flex justify-center gap-8 text-xs tracking-[0.35em] uppercase">

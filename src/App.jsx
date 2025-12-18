@@ -8,6 +8,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import SuperDashboard from "./pages/super/Dashboard";
 import AdminDashboard from "./pages/admin/Dashboard";
 import Landing from "./pages/Landing";
+import BookCafePage from "./pages/bookCafe";
 
 import VerificationHandler from "./components/VerificationHandler";
 
@@ -20,6 +21,7 @@ export default function App() {
 
         {/* ✅ ROOT */}
         <Route path="/" element={<Landing />} />
+        <Route path="/pustaka" element={<BookCafePage />} />
 
 
         <Route path="/login" element={<Login />} />
