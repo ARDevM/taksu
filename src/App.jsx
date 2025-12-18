@@ -1,17 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Login from "./auth/login";
 import Register from "./auth/register";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import RootRedirect from "./routes/RootRedirect";
+// import RootRedirect from "./routes/RootRedirect";
 
 import SuperDashboard from "./pages/super/Dashboard";
 import AdminDashboard from "./pages/admin/Dashboard";
-import CustomerDashboard from "./pages/customer/Dashboard";
 import Landing from "./pages/Landing";
+
+import VerificationHandler from "./components/VerificationHandler";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-right" />
+      <VerificationHandler />
       <Routes>
 
         {/* ✅ ROOT */}
@@ -39,14 +43,7 @@ export default function App() {
           }
         />
 
-        <Route
-          path="/customer"
-          element={
-            <ProtectedRoute role="customer">
-              <CustomerDashboard />
-            </ProtectedRoute>
-          }
-        />
+
       </Routes>
     </BrowserRouter>
   );

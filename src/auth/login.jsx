@@ -10,19 +10,29 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await api.post("/login", form);
-      saveAuth({ token: res.data.token, user: res.data.user });
-
       const role = res.data.role;
+  
+      // ❌ BLOK CUSTOMER
+      if (role === "customer") {
+        setError("Akun customer silakan login melalui halaman utama");
+        return;
+      }
+  
+      saveAuth({
+        token: res.data.token,
+        user: res.data.user,
+        role,
+      });
+  
+      // 🔀 REDIRECT DASHBOARD
       window.location.href =
-        role === "super_admin"
-          ? "/super"
-          : role === "admin"
-          ? "/admin"
-          : "/customer";
+        role === "super_admin" ? "/super" : "/admin";
+  
     } catch {
       setError("Email atau password salah");
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-[#f5f1e8] flex items-center justify-center font-serif">

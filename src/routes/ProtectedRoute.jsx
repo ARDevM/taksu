@@ -1,9 +1,19 @@
 import { Navigate } from "react-router-dom";
-import { getUser } from "../store/auth";
+import { getAuth } from "../store/auth";
 
 export default function ProtectedRoute({ role, children }) {
-  const user = getUser();
-  if (!user) return <Navigate to="/login" />;
-  if (user.role !== role) return <Navigate to="/login" />;
+  const auth = getAuth();
+
+  // ❌ Belum login
+  if (!auth || !auth.token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // ❌ Role tidak sesuai
+  if (role && auth.role !== role) {
+    return <Navigate to="/" replace />;
+  }
+
+  // ✅ Lolos
   return children;
 }
