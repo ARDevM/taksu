@@ -88,11 +88,11 @@ export default function Landing() {
             </Link>
           </div>
 
-          {user && (role === "customer" || user.role === "customer") && (
+          {/* {user && (role === "customer" || user.role === "customer") && (
             <div className="mt-10">
               <ProfileBadge user={user} />
             </div>
-          )}
+          )} */}
         </div>
 
         {/* RIGHT */}
